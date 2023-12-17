@@ -10,10 +10,10 @@ public class ClientReferences {
 	}
 	
 	public static Level getWorld(Player player) {
-		return player.level;
+		return player.level();
 	}
 	
 	public static Level getWorld() {
-		return Minecraft.getInstance().player.level;
+		return Minecraft.getInstance().player.level();
 	}
 }

@@ -2,11 +2,11 @@ package kirothebluefox.moblocks.utils;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
-import com.mojang.math.Matrix4f;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.util.FormattedCharSequence;
+import org.joml.Matrix4f;
 
 import java.util.List;
 
@@ -61,22 +61,21 @@ public class GuiUtils {
      		fillGradient(matrix4f, bufferbuilder, i2 - 3, j2 - 3, i2 + i + 3, j2 - 3 + 1, 400, 1347420415, 1347420415);
      		fillGradient(matrix4f, bufferbuilder, i2 - 3, j2 + k + 2, i2 + i + 3, j2 + k + 3, 400, 1344798847, 1344798847);
      		RenderSystem.enableDepthTest();
-     		RenderSystem.disableTexture();
+     		//RenderSystem.disableTexture();
      		RenderSystem.enableBlend();
      		RenderSystem.defaultBlendFunc();
      		//RenderSystem.shadeModel(7425);
-     		bufferbuilder.end();
-     		BufferUploader.end(bufferbuilder);
+     		BufferUploader.draw(bufferbuilder.end());
      		//RenderSystem.shadeModel(7424);
      		RenderSystem.disableBlend();
-     		RenderSystem.enableTexture();
+     		//RenderSystem.enableTexture();
      		MultiBufferSource.BufferSource irendertypebuffer$impl = MultiBufferSource.immediate(Tesselator.getInstance().getBuilder());
      		p_238654_1_.translate(0.0D, 0.0D, 400.0D);
 
      		for(int l1 = 0; l1 < p_238654_2_.size(); ++l1) {
      			FormattedCharSequence ireorderingprocessor1 = p_238654_2_.get(l1);
      			if (ireorderingprocessor1 != null) {
-     				font.drawInBatch(ireorderingprocessor1, (float)i2, (float)j2, -1, true, matrix4f, irendertypebuffer$impl, false, 0, 15728880);
+     				font.drawInBatch(ireorderingprocessor1, (float)i2, (float)j2, -1, true, matrix4f, irendertypebuffer$impl, Font.DisplayMode.NORMAL, 0, 15728880);
 	            }
 
 	            if (l1 == 0) {
